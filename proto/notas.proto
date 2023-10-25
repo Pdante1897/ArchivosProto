@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.notas";
+option java_outer_classname = "notasProto";
+option objc_class_prefix = "HLW";
+option go_package = "./notas";
+
+package notas;
+
+service Notas {
+  rpc AddNotas (NotaData) returns (Reply) {}
+}
+
+message NotaData {
+  int32 carnet = 1;
+  string nombre = 2;
+  string curso = 3;
+  int32 nota = 4;
+  string semestre = 5;
+  int32 year = 6;
+}
+
+message Reply {
+  string message = 1;
+}
